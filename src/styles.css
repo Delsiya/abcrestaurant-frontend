@@ -1,0 +1,826 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background: #000000;
+    color: #fff;
+    padding: 0.5em 0; /* Reduced padding for a smaller header */
+    height: 60px; /* Set a fixed height for the header */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+header .logo {
+    height: 68px; /* Adjust the height of the logo */
+    width: auto;  /* Keep aspect ratio */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em; /* Reduce font size */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em; /* Reduce font size for links */
+}
+
+/* Section styles */
+section {
+    padding: 2em 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 1em;
+}
+
+form input, form select, form textarea {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    width: 100%;
+}
+
+form button {
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Home section styles */
+#home {
+    background-image: url('C:\Users\MY PC\abcrestaurant\src\images\home.jpg'); /* Ensure the path is correct */
+    background-size: cover;
+    background-position: center;
+    color: #000000; /* Adjust text color for contrast against the background */
+    padding: 2em;
+    text-align: center; /* Center-align text */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+/* Footer styles */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+.footer .contact-details p {
+    margin: 0.5em 0;
+}
+#services {
+    background-image: url('C:\Users\MY PC\abcrestaurant\src\images\service.jpg'); /* Ensure the path is correct */
+    background-size: cover;
+    background-position: center;
+    color: #050505; /* Adjust text color for contrast */
+    padding: 3em 0;
+}
+
+#services h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+#services ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Evenly distribute the space */
+    flex-wrap: wrap; /* Ensure items wrap to a new row */
+    padding: 0;
+}
+
+#services ul li {
+    background: rgba(0, 0, 0, 0.6); /* Adding a slight transparency for readability */
+    padding: 1.5em;
+    margin: 1em;
+    border-radius: 8px;
+    width: 45%; /* Adjust width to fit two boxes per row */
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding and width don't affect layout */
+}
+
+#services ul li img {
+    max-width: 200px; /* Adjust the image size */
+    margin-bottom: 1em;
+}
+
+#services ul li button {
+    background-color: #91b1e2;
+    color: #000;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+#services ul li button:hover {
+    background-color: #504e4c;
+}
+#queries {
+    background-image: url('./images/service.jpg'); /* Adjust the path */
+    background-size: cover;
+    background-position: center;
+    padding: 3em 0;
+  }
+  #ordernow {
+    background-image: url('./images/service.jpg'); /* Correct relative path */
+    background-size: cover;
+    background-position: center;
+    padding: 3em 0;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .menu-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    width: 200px;
+  }
+  
+  .menu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .menu-item h3 {
+    margin: 10px 0;
+  }
+  
+  .menu-item p {
+    font-size: 1.2em;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  #reservations {
+    background-image: url('./images/service.jpg'); /* Adjust the path based on your directory structure */
+    background-size: cover;  /* Cover the entire section */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3em 0;  /* Add padding for spacing */
+  }
+  
+  #reservations .container {
+    background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent white background for better readability */
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+  }
+  
+  #reservations h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #333;
+  }
+  
+  #reservations form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+  }
+  
+  #reservations label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #reservations input,
+  #reservations button {
+    padding: 0.75em;
+    font-size: 0.65em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #reservations input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  #reservations button {
+    background-color: #45a049;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #reservations button:hover {
+    background-color: #45a049;
+  }
+  #order-checkout {
+    background-image: url('./images/service.jpg'); /* Adjust the path if necessary */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3em 0;
+  }
+  
+  #order-checkout .container {
+    background-color: rgba(255, 255, 255, 0.85); /* Transparent white for readability */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #order-checkout h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #333;
+  }
+  
+  #order-checkout form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  #order-checkout label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #order-checkout input,
+  #order-checkout select,
+  #order-checkout button {
+    padding: 0.75em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #order-checkout input:focus,
+  #order-checkout select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  #order-checkout button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #order-checkout button:hover {
+    background-color: #0056b3;
+  }
+  
+  #order-checkout p {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+  }
+  #payment {
+    background-image: url('./images/service.jpg'); /* Adjust the path if necessary */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3em 0;
+  }
+  
+  #payment .container {
+    background-color: rgba(255, 255, 255, 0.85); /* Transparent white for readability */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #payment h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #333;
+  }
+  
+  #payment form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  #payment label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #payment input {
+    padding: 0.75em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #payment input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  #payment button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 0.75em;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #payment button:disabled {
+    background-color: #0056b3;
+    cursor: not-allowed;
+  }
+  
+  #payment button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  #order-confirmation {
+    background-image: url('./images/service.jpg'); /* Adjust the path if necessary */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3em 0;
+  }
+  
+  #order-confirmation .container {
+    background-color: rgba(255, 255, 255, 0.85); /* Transparent white for readability */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #order-confirmation h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #333;
+  }
+  
+  #order-confirmation p {
+    text-align: center;
+    color: #333;
+    font-size: 1.2em;
+  }
+ /* Center-align container and text */
+/* Add a background image to the rooms section */
+#rooms {
+    background-image: url('./images/service.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    padding: 40px 0; /* Add some padding around the content */
+  }
+  
+  /* Center text and inline elements within the container */
+  #rooms .container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Optional: add a semi-transparent background to improve readability */
+    padding: 20px;
+    border-radius: 8px; /* Optional: add rounded corners */
+  }
+  
+  /* Ensure room sections are properly centered */
+  .room {
+    display: inline-block; /* Allow room sections to be centered */
+    text-align: left; /* Align text inside each room block */
+    margin: 0 auto; /* Center each room block */
+    margin-bottom: 20px; /* Space between room blocks */
+    width: 300px; /* Set a fixed width for room blocks */
+    vertical-align: top; /* Align items at the top */
+  }
+  
+  /* Set a consistent size for room images */
+  .room img {
+    width: 100%; /* Adjust to the room block width */
+    max-width: 300px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below the image */
+    margin: 0 auto; /* Center the image */
+  }
+  
+  /* Style for buttons */
+  .room button {
+    display: block;
+    margin: 10px auto; /* Center-align button */
+  }
+  
+  
+  #wedding-hall {
+    background-image: url('./images/service.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    padding: 40px 0; /* Add some padding around the content */
+    color: #fff; /* Adjust text color for contrast */
+  }
+  
+  #wedding-hall .container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: add a semi-transparent background to the container for better readability */
+    padding: 20px;
+    border-radius: 8px; /* Optional: add rounded corners to the container */
+  }
+  
+  #wedding-hall ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #wedding-hall li {
+    margin-bottom: 10px;
+  }
+  
+  #wedding-hall img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  /* styles.css */
+#booking-form {
+    background-image: url('./images/service.jpg'); /* Adjust the path as needed */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+    padding: 40px; /* Adds padding for spacing */
+    color: white; /* Ensures text is visible over the background */
+    min-height: 100vh; /* Ensures the section takes up at least the full viewport height */
+  }
+  
+  #booking-form .container {
+    background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent background to enhance text visibility */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  #booking-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px; /* Larger font size for headings */
+  }
+  
+  #booking-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #booking-form label {
+    margin-bottom: 15px;
+    font-size: 18px; /* Larger font size for labels */
+  }
+  
+  #booking-form input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; /* Larger font size for input fields */
+  }
+  
+  #booking-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745; /* Green background color */
+    color: white;
+    cursor: pointer;
+    font-size: 16px; /* Larger font size for button */
+  }
+  
+  #booking-form button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  #booking-form p {
+    text-align: center;
+    font-size: 18px; /* Larger font size for messages */
+  }
+  /* styles.css */
+
+/* General styles for the whole application */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Background for the booking form */
+  #booking-form {
+    
+  
+  /* Background for the login page */
+  .login-container {
+    background-image: url('./images/service.jpg'); /* Adjust path if needed */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .login-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .login-container form {
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for form */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .login-container label {
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .login-container input,
+  .login-container select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .login-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #45a049;
+  }
+  /* styles.css */
+
+/* General styles for the dashboard */
+.dashboard-container {
+    background-image: url('./images/service.jpg'); /* Adjust path if needed */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  /* Container for sections in the dashboard */
+  .dashboard-section {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .dashboard-section h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  /* List styles */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for list items */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Specific styles for different button types */
+  button.reply {
+    background-color: #2196F3; /* Blue for reply */
+  }
+  
+  button.reply:hover {
+    background-color: #1e88e5;
+  }
+  
+  button.delete {
+    background-color: #f44336; /* Red for delete */
+  }
+  
+  button.delete:hover {
+    background-color: #e53935;
+  }
+  
+  button.confirm {
+    background-color: #FFC107; /* Yellow for confirm */
+  }
+  
+  button.confirm:hover {
+    background-color: #ffb300;
+  }
+/* styles.css */
+
+/* General Styles */
+.staff-dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .staff-dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .table-container {
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: #f4f4f4;
+  }
+  
+  thead th {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .availability-check {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .availability-check input[type="date"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  .availability-check button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .availability-check button:hover {
+    background-color: #218838;
+  }
+    
+  
+    
+  
+  
+}
+  
