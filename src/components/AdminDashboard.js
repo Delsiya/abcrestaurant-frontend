@@ -1,110 +1,58 @@
-import React, { useEffect, useState } from 'react';
-import '../styles.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../css/admin-dashboard.css"; 
 
-function AdminDashboard() {
-  const [queries, setQueries] = useState([]);
-  const [bookings, setBookings] = useState([]);
-
-  useEffect(() => {
-    // Fetch customer queries
-    fetch('http://localhost:8081/api/queries/get')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Queries:', data); // Log the data to verify its structure
-        setQueries(data);
-      })
-      .catch(error => console.error('Error fetching queries:', error));
-
-    // Fetch room bookings
-    fetch('http://localhost:8081/api/bookings')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Bookings:', data); // Log the data to verify its structure
-        setBookings(data);
-      })
-      .catch(error => console.error('Error fetching bookings:', error));
-  }, []);
-
-  const handleReplyQuery = (queryId) => {
-    // Implement logic to reply to the query
-    alert(`Reply to query ${queryId}`);
-  };
-
-  const handleDeleteQuery = (queryId) => {
-    fetch(`http://localhost:8081/api/queries/${queryId}`, { method: 'DELETE' })
-      .then(() => {
-        setQueries(queries.filter(query => query.id !== queryId));
-      })
-      .catch(error => console.error('Error deleting query:', error));
-  };
-
-  const handleConfirmBooking = (bookingId) => {
-    fetch(`http://localhost:8081/api/bookings/${bookingId}/confirm`, { method: 'PUT' })
-      .then(response => response.json())
-      .then(() => {
-        setBookings(bookings.filter(booking => booking.id !== bookingId));
-      })
-      .catch(error => console.error('Error confirming booking:', error));
-  };
-
-  const handleCancelBooking = (bookingId) => {
-    fetch(`http://localhost:8081/api/bookings/${bookingId}/cancel`, { method: 'DELETE' })
-      .then(() => {
-        setBookings(bookings.filter(booking => booking.id !== bookingId));
-      })
-      .catch(error => console.error('Error canceling booking:', error));
-  };
-
-  const handleDeleteBooking = (bookingId) => {
-    fetch(`http://localhost:8081/api/bookings/${bookingId}`, { method: 'DELETE' })
-      .then(() => {
-        setBookings(bookings.filter(booking => booking.id !== bookingId));
-      })
-      .catch(error => console.error('Error deleting booking:', error));
-  };
-
+const AdminDashboard = () => {
   return (
-    <div>
-      <h2>Admin Dashboard</h2>
+    <div className="admin-dashboard">
+      <header className="admin-header">
+        <h1>Admin Dashboard</h1>
+      </header>
       
-      <h3>Customer Queries</h3>
-      {queries.length === 0 ? (
-        <p>No queries submitted yet.</p>
-      ) : (
-        <ul>
-          {queries.map(query => (
-            <li key={query.id}>
-              <strong>Email:</strong> {query.email}<br />
-              <strong>Query:</strong> {query.query || 'No query text'}<br />
-              <button onClick={() => handleReplyQuery(query.id)}>Reply</button>
-              <button onClick={() => handleDeleteQuery(query.id)}>Delete</button>
-            </li>
-          ))}
+      <nav className="admin-nav">
+       
+      </nav>
+
+      <div className="admin-content">
+        <p>Welcome to the Admin Dashboard. Choose a service to manage:</p>
+      </div>
+      <ul>
+          <li>
+            <Link to="/branch-management" aria-label="Manage Branches">Branch Management</Link>
+          </li>
         </ul>
-      )}
-      
-      <h3>Room Bookings</h3>
-      {bookings.length === 0 ? (
-        <p>No room bookings yet.</p>
-      ) : (
         <ul>
-          {bookings.map(booking => (
-            <li key={booking.id}>
-              <strong>Name:</strong> {booking.name}<br />
-              <strong>Email:</strong> {booking.email}<br />
-              <strong>Phone:</strong> {booking.phone}<br />
-              <strong>Room Type:</strong> {booking.roomType}<br />
-              <strong>Check-in Date:</strong> {new Date(booking.checkInDate).toLocaleDateString()}<br />
-              <strong>Check-out Date:</strong> {new Date(booking.checkOutDate).toLocaleDateString()}<br />
-              <button onClick={() => handleConfirmBooking(booking.id)}>Confirm</button>
-              <button onClick={() => handleCancelBooking(booking.id)}>Cancel</button>
-              <button onClick={() => handleDeleteBooking(booking.id)}>Delete</button>
-            </li>
-          ))}
+          <li>
+            <Link to="/blood-search" aria-label="Blood Search">Blood Search</Link>
+          </li>
         </ul>
-      )}
+        <ul>
+          <li>
+            <Link to="/donor-registration" aria-label="Donor Registration">Donor Registration</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link to="/event-management" aria-label="Event Management">Event Management</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link to="/blood-bank" aria-label="Blood Bank">Blood Bank</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link to="/ambulance-management" aria-label="Ambulance Management">Ambulance Management</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link to="/ambulance-form" aria-label="Ambulance Form">Ambulance Form</Link>
+          </li>
+        </ul>   
     </div>
   );
-}
+};
 
 export default AdminDashboard;

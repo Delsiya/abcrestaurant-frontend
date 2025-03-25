@@ -1,46 +1,118 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import Services from './components/Services';
-import Reservations from './components/Reservations';
-import Queries from './components/Queries';
-import LoginPage from './components/Login';
-import AdminDashboard from './components/AdminDashboard';
-import StaffDashboard from './components/StaffDashboard';
-import OrderNow from './components/OrderNow';
-import OrderCheckout from './components/OrderCheckout';
-import Payment from './components/Payment';
-import OrderConfirmation from './components/OrderConfirmation';
-import Rooms from './components/Rooms';
-import BookingForm from './components/BookingForm';
-import WeddingHall from './components/WeddingHall';  // Import WeddingHall
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import Login from "./components/Login";
+import SignUp from "./components/Signup";
+import AdminDashboard from "./components/AdminDashboard";
+import AmbulanceManagement from "./components/AmbulanceManagement";
+import BloodManagementMenu from "./components/BloodManagement"
+import BranchManagement from "./components/BranchManagement"
+import IncidentForm from "./components/IncidentForm";
+import BloodSearch from "./components/BloodSearch"
+import DonorRegistration from "./components/DonorRegistration"
+import EventManagement from "./components/EventManagement"
+import BloodBank from "./components/BloodBank"
+import AmbulanceForm from "./components/AmbulanceForm"
 
-function App() {
-  // State to manage order items shared between OrderNow and OrderCheckout
-  const [orderItems, setOrderItems] = useState([]);
+
+
+const App = () => {
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const storedUserLoggedIn = localStorage.getItem("userLoggedIn");
+    const storedIsAdmin = localStorage.getItem("isAdmin") === "true";
+
+    if (storedUserLoggedIn === "true") {
+      setUserLoggedIn(true);
+      setIsAdmin(storedIsAdmin);
+    }
+  }, []);
+
+  const handleLogin = (email, password) => {
+    console.log("Logged in with:", email, password);
+
+    const admin = email === "admin@domain.com" && password === "password";
+
+    localStorage.setItem("userLoggedIn", "true");
+    localStorage.setItem("isAdmin", admin ? "true" : "false");
+
+    setUserLoggedIn(true);
+    setIsAdmin(admin);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("userLoggedIn");
+    localStorage.removeItem("isAdmin");
+    setUserLoggedIn(false);
+    setIsAdmin(false);
+  };
 
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/reservations" element={<Reservations />} />
-        <Route path="/queries" element={<Queries />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/staff-dashboard" element={<StaffDashboard />} />
-        <Route path="/order-now" element={<OrderNow setOrderItems={setOrderItems} />} />
-        <Route path="/order-checkout" element={<OrderCheckout orderItems={orderItems} />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/order-confirmation" element={<OrderConfirmation />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/booking/:roomType" element={<BookingForm />} />
-        <Route path="/wedding-hall" element={<WeddingHall />} />  {/* Add route for WeddingHall */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/signup" element={<SignUp />} />
+
+        {/* Admin Dashboard */}
+        <Route
+          path="/admin-dashboard"
+          element={isAdmin ? <AdminDashboard onLogout={handleLogout} /> : <Navigate to="/" />}
+        />
+
+        {/* Ambulance Management */}
+        <Route
+          path="/ambulance-management"
+          element={isAdmin ? <AmbulanceManagement /> : <Navigate to="/" />}
+        />
+
+        {/* Blood Management */}
+        <Route
+          path="/blood-management"
+          element={isAdmin ? <BloodManagementMenu /> : <Navigate to="/" />}
+        />
+         <Route
+          path="/branch-management"
+          element={isAdmin ? <BranchManagement /> : <Navigate to="/" />}
+        />
+       
+        <Route
+          path="/blood-search"
+          element={isAdmin ? < BloodSearch /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/donor-registration"
+          element={isAdmin ? <DonorRegistration /> : <Navigate to="/" />}
+        />
+          
+          <Route
+          path="/event-management"
+          element={isAdmin ? <EventManagement /> : <Navigate to="/" />}
+        />
+         <Route
+          path="/blood-bank"
+          element={isAdmin ? <BloodBank /> : <Navigate to="/" />}
+        />
+         <Route
+          path="/ambulance-management"
+          element={isAdmin ? <AmbulanceManagement /> : <Navigate to="/" />}
+        />
+         <Route
+          path="/ambulance-form"
+          element={isAdmin ? <AmbulanceForm /> : <Navigate to="/" />}
+        />
+         {/* Incident Form for regular users */}
+         <Route
+          path="/incident-form"
+          element={userLoggedIn && !isAdmin ? <IncidentForm /> : <Navigate to="/login" />}
+        />
       </Routes>
+
+
     </Router>
   );
-}
+};
 
 export default App;

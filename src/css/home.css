@@ -1,0 +1,210 @@
+/* Resetting the default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Page Styling */
+  .home-page {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+  }
+  
+  /* Header Section */
+  .header {
+    background-color: #3498db; /* Blue color */
+    color: rgb(0, 0, 0);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Services Section */
+  .services-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .services-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .services-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .services-section ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+  
+  .services-section li {
+    margin-bottom: 10px;
+  }
+  
+  /* How to Get Help Section */
+  .how-to-get-help {
+    padding: 40px 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .how-to-get-help h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .how-to-get-help p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .how-to-get-help ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+  
+  .how-to-get-help li {
+    margin-bottom: 10px;
+  }
+  
+  .how-to-get-help a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .how-to-get-help a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Why Choose Us Section */
+  .why-choose-us {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .why-choose-us h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .why-choose-us p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .why-choose-us ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+  
+  .why-choose-us li {
+    margin-bottom: 10px;
+  }
+  
+  /* Ambulance Image and Animation */
+  .ambulance-animation {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    animation: moveAmbulance 3s ease-in-out infinite;
+  }
+  
+  @keyframes moveAmbulance {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Footer Styling */
+  .footer {
+    background-color: #3498db; /* Blue color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer p {
+    font-size: 1.2rem;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .header p {
+      font-size: 1rem;
+    }
+  
+    .services-section h2,
+    .how-to-get-help h2,
+    .why-choose-us h2 {
+      font-size: 1.6rem;
+    }
+  
+    .services-section ul,
+    .how-to-get-help ul,
+    .why-choose-us ul {
+      font-size: 1rem;
+    }
+  
+    .footer p {
+      font-size: 1rem;
+    }
+  }
+  

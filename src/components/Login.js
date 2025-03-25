@@ -1,67 +1,58 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles.css'; // Adjust the path according to the location of styles.css
 
-function LoginPage() {
-  const [username, setUsername] = useState('');
+const Login = ({ onLogin }) => {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userType, setUserType] = useState('staff'); // Default to staff
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    // Mock login function: Replace with actual authentication logic
-    if (username && password) {
-      // Redirect based on user type
-      switch(userType) {
-        case 'admin':
-          navigate('/admin-dashboard');
-          break;
-        case 'staff':
-        default:
-          navigate('/staff-dashboard');
-          break;
-      }
+    
+    // Admin login condition (corrected email)
+    if (email === 'admin@domain.com' && password === 'password') {
+      onLogin(email, password); // Admin login logic
+      navigate('/admin-dashboard'); // Redirect to Admin Dashboard
+    } 
+    // Regular user login condition
+    else if (email && password) {
+      onLogin(email, password); // Regular user login logic
+      navigate('/incident-form'); // Redirect to Incident Form
+    } else {
+      alert('Invalid credentials');
     }
   };
 
   return (
     <div className="login-container">
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          <span>User Type:</span>
-          <select
-            value={userType}
-            onChange={(e) => setUserType(e.target.value)}
-          >
-            <option value="staff">Restaurant Staff</option>
-            <option value="admin">Admin</option>
-          </select>
-        </label>
-        <button type="submit">Login</button>
-      </form>
+      <div className="login-box">
+        <h2>Login</h2>
+        <form onSubmit={handleLogin}>
+          <div className="input-group">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input-field"
+              required
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input-field"
+              required
+            />
+          </div>
+          <button type="submit" className="login-button">Login</button>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
-export default LoginPage;
+export default Login;

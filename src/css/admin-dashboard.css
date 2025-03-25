@@ -1,0 +1,142 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Admin Dashboard Layout */
+  .admin-dashboard {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+  }
+  
+  /* Header Styles */
+  .admin-header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .admin-header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  /* Navigation Bar */
+  .admin-nav {
+    background-color: #34495e;
+    padding: 10px 0;
+  }
+  
+  .admin-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .admin-nav li {
+    margin: 0 15px;
+  }
+  
+  .admin-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .admin-nav a:hover {
+    background-color: #1abc9c;
+    transform: scale(1.05);  /* Slight scale effect on hover */
+  }
+  
+  /* Content Area */
+  .admin-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .admin-content p {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  /* List of Links */
+  .admin-content ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-content li {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-content li a {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+  .admin-content li a:hover {
+    color: #fff;
+  }
+  
+  .admin-content li:hover {
+    background-color: #1abc9c;
+    transform: translateY(-5px);  /* Elevate on hover */
+  }
+  
+  .admin-content li a:hover {
+    color: white; /* Change link color to white on hover */
+  }
+  
+  /* Adding Icons Next to Links */
+  .admin-content li a::before {
+    content: url('https://img.icons8.com/ios/50/000000/forward.png'); /* Example icon */
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  /* Active Links or Highlighted States */
+  .admin-content li a.active {
+    background-color: #16a085;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .admin-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .admin-content ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .admin-nav a {
+      padding: 10px;
+      font-size: 1rem;
+    }
+  }
+  
